@@ -30,11 +30,11 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
             return View(film);
         }
 
-        public ActionResult Miejsce(int id = 0)
-        {
+        //public ActionResult Miejsce(int id = 0)
+        //{
 
 
 
-        }
+        //}
     }
 }

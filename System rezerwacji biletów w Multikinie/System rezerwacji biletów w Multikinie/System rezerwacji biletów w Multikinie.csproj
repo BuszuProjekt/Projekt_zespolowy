@@ -184,13 +184,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SalaController.cs" />
+    <Compile Include="Controllers\SeansController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Miejsce.cs" />
     <Compile Include="Models\MultikinoDb.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\Sala.cs" />
     <Compile Include="Models\Seans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -311,6 +315,13 @@
     <Content Include="Views\Film\Edit.cshtml" />
     <Content Include="Views\Film\Delete.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Seans\Index.cshtml" />
+    <Content Include="Views\Seans\Details.cshtml" />
+    <Content Include="Views\Seans\Create.cshtml" />
+    <Content Include="Views\Seans\Edit.cshtml" />
+    <Content Include="Views\Seans\Delete.cshtml" />
+    <Content Include="Views\Sala\Index.cshtml" />
+    <Content Include="Views\Sala\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
