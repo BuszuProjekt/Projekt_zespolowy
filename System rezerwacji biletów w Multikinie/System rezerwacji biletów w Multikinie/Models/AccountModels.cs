@@ -8,16 +8,6 @@ using System.Web.Security;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DefaultConnection")
-        {
-        }
-
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
-
     [Table("UserProfile")]
     public class UserProfile
     {
@@ -25,6 +15,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string Email { get; set; }
     }
 
     public class RegisterExternalLoginModel

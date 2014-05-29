@@ -8,13 +8,11 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using System_rezerwacji_biletów_w_Multikinie.Filters;
 using System_rezerwacji_biletów_w_Multikinie.Models;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -263,7 +261,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (var db = new MultikinoDb())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
