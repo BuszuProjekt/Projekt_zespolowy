@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System_rezerwacji_biletów_w_Multikinie.Models;
+using System_rezerwacji_biletów_w_Multikinie.Models;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 {
@@ -10,10 +12,13 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
+            using (var db = MultikinoDb())
+            {
+                
+            }
             return View();
         }
+
 
         public ActionResult About()
         {
