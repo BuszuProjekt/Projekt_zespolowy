@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System_rezerwacji_biletów_w_Multikinie.Models;
-using System_rezerwacji_biletów_w_Multikinie.Models;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 {
@@ -12,26 +11,30 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
     {
         public ActionResult Index()
         {
-            using (var db = MultikinoDb())
+            List<Seans> seanses;
+            using (var db = new MultikinoDb())
             {
-                
+                seanses = db.Seanse.ToList();
             }
-            return View();
+            return View(seanses);
         }
 
-
-        public ActionResult About()
+        public ActionResult Details(int id = 0)
         {
-            ViewBag.Message = "Your app description page.";
+            Film film;
+            using (var db = new MultikinoDb())
+            {
+                film = db.Filmy.Find(id);
+            }
 
-            return View();
+            return View(film);
         }
 
-        public ActionResult Contact()
+        public ActionResult Miejsce(int id = 0)
         {
-            ViewBag.Message = "Your contact page.";
 
-            return View();
+
+
         }
     }
 }

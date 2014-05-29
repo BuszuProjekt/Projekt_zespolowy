@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -190,6 +191,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\MultikinoDb.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\Seans.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +305,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Film\Index.cshtml" />
+    <Content Include="Views\Film\Details.cshtml" />
+    <Content Include="Views\Film\Create.cshtml" />
+    <Content Include="Views\Film\Edit.cshtml" />
+    <Content Include="Views\Film\Delete.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
