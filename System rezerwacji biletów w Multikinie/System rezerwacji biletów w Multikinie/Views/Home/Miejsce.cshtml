@@ -1,0 +1,19 @@
+﻿@model IEnumerable<System_rezerwacji_biletów_w_Multikinie.Models.Miejsce>
+@{
+    ViewBag.Title = "Miejsce";
+    int id_seansu = ViewBag.IdSeansu;
+    
+}
+
+<h2>Miejsca</h2>
+@foreach (var item in Model)
+{
+
+    using (Html.BeginForm("Miejsce", "Home", new { id = Convert.ToInt32(item.Identyfikator), id2 = id_seansu }, FormMethod.Post, null))
+                {
+                    
+                    <input type="submit" value=@item.Identyfikator />
+                    
+                }
+}
+    

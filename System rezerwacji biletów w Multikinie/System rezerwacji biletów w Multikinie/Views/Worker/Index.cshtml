@@ -1,0 +1,46 @@
+﻿@model IEnumerable<System_rezerwacji_biletów_w_Multikinie.Models.Bilet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsera)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSeansu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdMiejsca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSeansu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdMiejsca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.ActionLink("Walidacja", "Usun", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

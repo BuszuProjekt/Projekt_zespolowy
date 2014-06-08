@@ -1,0 +1,59 @@
+﻿@model Filmowo.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detale</h2>
+
+<fieldset>
+    <legend>RegisterModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserLogin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserLogin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PhoneNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Address.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address.City)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Address.Street)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address.Street)
+    </div>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Address.AppartmentNumber)
+    </div>
+    <div class="display-field">
+        @Model.Address.HomeNumber/@Model.Address.AppartmentNumber
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index","Admin")
+</p>

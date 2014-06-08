@@ -1,0 +1,29 @@
+﻿@model System_rezerwacji_biletów_w_Multikinie.Models.Film
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Film</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tytul)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tytul)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Opis)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Opis)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

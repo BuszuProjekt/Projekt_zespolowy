@@ -77,7 +77,16 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password,new
+                    {
+                        model.Email,
+                        Role="Client",
+                        model.Adres,
+                        model.Miasto,
+                        model.KodPocztowy,
+                        model.NrKarty
+                    });
+                    Roles.AddUserToRole(model.UserName, "Client");
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

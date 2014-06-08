@@ -12,7 +12,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink("Home", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -20,9 +20,25 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>@Html.ActionLink("Katalog filmów", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Filmy", "Index", "Film")</li>
+                                <li>@Html.ActionLink("Sale", "Index", "Sala")</li>    
+                                <li>@Html.ActionLink("Seans", "Index", "Seans")</li>                                                    
+                                <li>@Html.ActionLink("Konta", "Index", "Admin")</li>
+
+                            }
+                            @if (User.IsInRole("Client"))
+                            {
+                                <li>@Html.ActionLink("Filmy", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Bilety", "Bilety", "Home")</li>
+                            }
+                            @if (User.IsInRole("Worker"))
+                            {
+                                <li>@Html.ActionLink("Filmy", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Rezerwacje", "Index", "Worker")</li>
+                            }
                         </ul>
                     </nav>
                 </div>

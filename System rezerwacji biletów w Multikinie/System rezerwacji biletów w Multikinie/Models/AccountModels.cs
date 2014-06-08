@@ -16,6 +16,12 @@ namespace System_rezerwacji_biletów_w_Multikinie.Models
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public string Role { get; set; }
+        public string  Adres { get; set; }
+        public string Miasto { get; set; }
+        public string KodPocztowy { get; set; }
+        public string NrKarty { get; set; }
+
     }
 
     public class RegisterExternalLoginModel
@@ -49,34 +55,55 @@ namespace System_rezerwacji_biletów_w_Multikinie.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nazwa Uzytkowanika")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Zapamietać mnie??")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nazwa Uzytkowanika")]
         public string UserName { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Hasło musi miec co najmnie 6 znaków", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Hasło")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Potwierdzenia Hasła")]
+        [Compare("Password", ErrorMessage = "Hasło i jego potwierdzenie musza byc identyczne")]
         public string ConfirmPassword { get; set; }
+
+
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Podaj poprawny mail")]
+        public string Email { get; set; }
+        [Required]
+        [Display(Name = "Adres (np. Polna 12/6)")]
+        [StringLength(100, ErrorMessage = "Podaj Adres")]
+        public string Adres { get; set; }
+        [Required]
+        [Display(Name = "Miasto (np. Opole)")]
+        [StringLength(100, ErrorMessage = "Podaj Miasto")]
+        public string Miasto { get; set; }
+        [Required]
+        [Display(Name = "Koda pocztowy (np 00-000)")]
+        [StringLength(100, ErrorMessage = "Kod Pocztowy")]
+      //  [RegularExpression("/^[0-9]{2}\-[0-9]{3}", ErrorMessage = "Podaj poprawny kod pocztowy")]
+        public string KodPocztowy { get; set; }
+        [Required]
+        [Display(Name = "Numer karty")]
+        public string NrKarty { get; set; }
+        public string Role { get; set; }
     }
 
     public class ExternalLogin

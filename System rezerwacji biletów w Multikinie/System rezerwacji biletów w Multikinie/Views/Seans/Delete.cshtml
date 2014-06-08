@@ -1,0 +1,47 @@
+﻿@model System_rezerwacji_biletów_w_Multikinie.Models.Seans
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Seans</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdFilmu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdFilmu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TytułFilmu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TytułFilmu)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdSali)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdSali)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

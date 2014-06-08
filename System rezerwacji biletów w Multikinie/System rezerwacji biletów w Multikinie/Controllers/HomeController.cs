@@ -59,5 +59,23 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
             }
             return RedirectToAction("Index");
         }
+        //client
+        public ActionResult Bilety()//lista liletów
+        {
+            List<Bilet> Bilety;
+            using (var db = new MultikinoDb())
+            {
+                string Login = User.Identity.Name;
+                var lista = db.UserProfiles.Where(name => name.UserName ==Login ).ToList();
+                int id = lista[0].UserId;
+                Bilety = db.Bilety.Where(i => i.IdUsera == id).ToList();
+            }
+            return View(Bilety);
+        }
+
+        //zarzadzanie kontami:)
+
+
+
     }
 }
