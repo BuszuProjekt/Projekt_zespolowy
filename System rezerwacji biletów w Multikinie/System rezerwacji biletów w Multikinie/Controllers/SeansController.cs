@@ -10,6 +10,7 @@ using System_rezerwacji_biletów_w_Multikinie.Models;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 {
+    [Authorize(Roles = "Admin,Worker")]
     public class SeansController : Controller
     {
         private MultikinoDb db = new MultikinoDb();

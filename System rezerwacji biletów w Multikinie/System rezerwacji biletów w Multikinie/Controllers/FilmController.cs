@@ -15,7 +15,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 
         //
         // GET: /Film/
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Filmy.ToList());
@@ -23,7 +23,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 
         //
         // GET: /Film/Details/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int id = 0)
         {
             Film film = db.Filmy.Find(id);
@@ -36,7 +36,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 
         //
         // GET: /Film/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -61,7 +61,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 
         //
         // GET: /Film/Edit/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id = 0)
         {
             Film film = db.Filmy.Find(id);
@@ -90,7 +90,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 
         //
         // GET: /Film/Delete/5
-
+        [Authorize(Roles = "Admin,Worker")]
         public ActionResult Delete(int id = 0)
         {
             Film film = db.Filmy.Find(id);

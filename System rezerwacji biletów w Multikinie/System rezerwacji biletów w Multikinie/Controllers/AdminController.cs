@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 
 namespace Filmowo.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         //
@@ -89,6 +90,7 @@ namespace Filmowo.Controllers
                 }
                 catch 
                 {
+                    //bład nie da sue usunać
                 }
                 return RedirectToAction("Index");
             }

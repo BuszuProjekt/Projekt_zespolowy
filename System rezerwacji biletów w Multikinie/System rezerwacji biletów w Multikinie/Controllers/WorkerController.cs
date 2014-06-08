@@ -12,7 +12,7 @@ namespace System_rezerwacji_biletów_w_Multikinie.Controllers
     {
         //
         // GET: /Worker/
-
+        [Authorize(Roles = "Admin,Worker")]
         public ActionResult Index()
         {
             List<Bilet> bilety;

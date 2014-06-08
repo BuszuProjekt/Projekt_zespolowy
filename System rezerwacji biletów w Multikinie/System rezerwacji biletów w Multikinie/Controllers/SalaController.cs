@@ -9,6 +9,7 @@ using System_rezerwacji_biletów_w_Multikinie.Models;
 
 namespace System_rezerwacji_biletów_w_Multikinie.Controllers
 {
+    [Authorize(Roles = "Admin,Worker")]
     public class SalaController : Controller
     {
         private MultikinoDb db = new MultikinoDb();
